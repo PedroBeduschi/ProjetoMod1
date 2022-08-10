@@ -7,25 +7,47 @@
         <link rel="stylesheet" href="./assets/css/style.css" />
     </head>
     <body>
-        <header class="cabecalho">
-            <img id="logo" src="./assets/img/logo.png" />
-            <h1 id="titulo">
-                Controle Financeiro
-            </h1>
-            <div id="menu">
-                <a>
-                    Dashboard
-                </a>
-                <img class="linha" src="./assets/img/line.png" />
-                <a>
-                    Resumo
-                </a>
-                <img class="linha" src="./assets/img/line.png" />
-                <a>
-                    Configurações
-                </a>
+        <div class="conteudo">
+            <header class="cabecalho">
+                <img id="logo" src="./assets/img/logo.png" />
+                <h1 id="titulo">
+                    Controle financeiro
+                </h1>
+                <div id="menu">
+                    <a>
+                        Dashboard
+                    </a>
+                    <img class="linha" src="./assets/img/line.png" />
+                    <a>
+                        Resumo
+                    </a>
+                    <img class="linha" src="./assets/img/line.png" />
+                    <a>
+                        Configurações
+                    </a>
+                </div>
+            </header>
+            <div  class="formulario">
+                <h2 id="novatrns">
+                    Nova Transação
+                </h2>
+                <form class="form1">
+                    <label for="transacao">Tipo de transação</label>
+                    <select class="caixa" placeholder="Compra" id="transacao" name="transacao">
+                        <option value="compra">Compra</option>
+                        <option value="venda">Venda</option>
+                    </select>
+                    <label for="nomemerc">Nome da mercadoria</label>
+                    <input class="caixa" placeholder="Input" type="text" id="nomemerc" name="nomemerc"/>
+                    <label for="valor">Valor</label>
+                    <input class="caixa" placeholder="R$ 0.00" type="number" id="valor" name="valor"/>
+                    <input type="submit" id="addtrns" value="Adicionar transação"/>
+                </form>
             </div>
-        </header>
-        Single page app
+            <div>
+                <table></table>
+            </div>
+        </div>
+        
     </body>
 </html>
