@@ -11,14 +11,6 @@ body
     width: 100%;
 }
 
-h2
-{
-    font-family: lato;
-    font-style: normal;
-    font-size: 18px;
-    font-weight: 700;
-}
-
 header
 {
     background-color: #E0E0E0;
@@ -85,22 +77,37 @@ a
     height: 20px;
 }
 
+.corpo
+{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
 .formulario
 {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     border-width: 1px;
     border-style: solid;
     border-color: #979797;
     border-radius: 4px;
     margin-top: 100px;
-    margin-right: 0px;
     margin-left: 170px;
     height: 344px;
-    width: 400px;
+    width: 26%;
+    font-family: lato;
+}
+
+#novatrans
+{
+    font-size: 18px;
+    font-weight: 700;
+    width: 100%;
+    margin-top: 100px;
 }
 
 .form1
@@ -109,12 +116,21 @@ a
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: flex-start;
-    justify-content: space-evenly;
+    justify-content: space-around;
     height: 300px;
-    width: 370px;
+    width: 92%;
     font-family: lato;
     font-weight: 400;
     font-size: 14px;
+}
+
+.form1 form
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
 }
 
 .caixa
@@ -134,4 +150,55 @@ a
     border-radius: 4px;
     border-width: 0px;
 
+}
+
+.historico
+{
+    width: 50%;
+    margin-top: 100px;
+    margin-right: 170px;
+    margin-left: 15px;
+    font-family: lato;
+    font-size: 14px;
+}
+
+td
+{
+    padding: 8px;
+}
+
+th
+{
+    padding: 8px;
+}
+
+td
+{
+    border-width: 1px;
+    border-style: solid;
+    border-color: #333333;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-spacing: 0;
+}
+
+thead th
+{
+    border-width: 1px;
+    border-style: solid;
+    border-color: #333333;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+tfoot td
+{
+    border-width: 1px;
+    border-style: solid;
+    border-color: #333333;
+    border-bottom: 0px;
+    border-left: 0px;
+    border-right: 0px;
 }

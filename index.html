@@ -27,27 +27,69 @@
                     </a>
                 </div>
             </header>
-            <div  class="formulario">
-                <h2 id="novatrns">
-                    Nova Transação
-                </h2>
-                <form class="form1">
-                    <label for="transacao">Tipo de transação</label>
-                    <select class="caixa" placeholder="Compra" id="transacao" name="transacao">
-                        <option value="compra">Compra</option>
-                        <option value="venda">Venda</option>
-                    </select>
-                    <label for="nomemerc">Nome da mercadoria</label>
-                    <input class="caixa" placeholder="Input" type="text" id="nomemerc" name="nomemerc"/>
-                    <label for="valor">Valor</label>
-                    <input class="caixa" placeholder="R$ 0.00" type="number" id="valor" name="valor"/>
-                    <input type="submit" id="addtrns" value="Adicionar transação"/>
-                </form>
-            </div>
-            <div>
-                <table></table>
-            </div>
+            <div class="corpo">
+                <div  class="formulario">
+                    <div id="novatrns">
+                        Nova Transação
+                    </div>
+                    <div class="form1">
+                        <form>
+                            <div>
+                                <label for="transacao">Tipo de transação</label>
+                                <select class="caixa" placeholder="Compra" id="transacao" name="transacao">
+                                <option value="compra">Compra</option>
+                                <option value="venda">Venda</option>
+                            </select>
+                            </div>
+                            <div>
+                                <label for="nomemerc">Nome da mercadoria</label>
+                                <input class="caixa" placeholder="Input" type="text" id="nomemerc" name="nomemerc"/>
+                            </div>
+                            <div>
+                                <label for="valor">Valor</label>
+                                <input class="caixa" placeholder="R$ 0.00" type="number" id="valor" name="valor"/>
+                            </div>
+                            <input type="submit" id="addtrns" value="Adicionar transação"/>
+                        </form>
+                    </div>
+                    
+                </div>
+                <div class="historico">
+                    <table class="tabela" style="width: 100%;">
+                        <thead>
+                            <tr>
+                                <th style="width: 5%;"> </th>
+                                <th style="width: 32%; text-align:left;">Mercadoria</th>
+                                <th style="width: 63%; text-align: right;">Valor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>+</td>
+                                <td>Lorem ipsum dolor sit amet consectetur</td>
+                                <td style="text-align: right;">R$ 12.999,99</td>
+                            </tr>
+                            <tr class="info">
+                                <td>-</td>
+                                <td>Quis nostrud exercitation</td>
+                                <td style="text-align: right;">R$ 99,99</td>
+                            </tr>
+                            <tr class="info">
+                                <td>+</td>
+                                <td>Lorem ipsum </td>
+                                <td style="text-align: right;">R$ 9,99</td>
+                            </tr>
+                        </tbody>
+                        <tfoot style="font-weight: bold;">
+                            <tr>
+                                <td> </td>
+                                <td>Total</td>
+                                <td style="text-align: right;">R$ 12.909.99<br><div style="font-size: 10px; font-weight: normal;">[LUCRO]</div></td>
+                            </tr> 
+                        </tfoot>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+                    </table>
+                </div>
+            </div>  
         </div>
-        
-    </body>
+      </body>
 </html>
