@@ -1,0 +1,423 @@
+@font-face 
+{
+    font-family: lato;
+    src: url(../font/Lato-Regular.ttf);
+}
+
+body
+{
+    background-color: #FFFFFF;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-family: lato;
+    color: #333333;
+}
+
+header
+{
+    background-color: #E0E0E0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.cont
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+#titulo
+{
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    font-weight: 600;   
+    font-style: normal;
+}
+
+.opcoes
+{
+    display: none;
+}
+
+.menu a
+{
+    text-decoration: none;
+    color: #333333;
+}
+
+.menu .opcoes .linha
+{
+    display: none;
+}
+
+.cont .menu:hover .opcoes
+{
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    position: fixed;
+    height: 100%;
+    width: 80%;
+    background-color: #333333;
+    top: 0;
+    right: 0;
+}
+
+.cont .menu:hover .opcoes a
+{
+    color: #FFFFFF;
+    margin: 20px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.corpo
+{
+    width: 100%;
+    height: 730px;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.formulario
+{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #979797;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    height: 45%;
+    width: 95%;
+    margin-top: 30px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.corpo .formulario .novatrns
+{
+    font-size: 18px;
+    font-weight: 700;
+    width: 100%;
+    text-align: center;
+}
+
+.form1
+{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: space-around;
+    height: 250px;
+    width: 92%;
+    font-family: lato;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.form1 form
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+}
+
+.caixa
+{
+    width: 100%;
+    height: 32px;
+    border-radius: 4px;
+    border-width: 1px;
+    margin-bottom: 20px;
+}
+
+#addtrns
+{
+    width: 100%;
+    height: 32px;
+    background-color: #333333;
+    color: #FFFFFF;
+    border-radius: 4px;
+    border-width: 0px;
+
+}
+
+.historico
+{
+    width: 90%;
+    margin-top: 30px;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-family: lato;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+}
+
+.historico #extrato
+{
+    font-size: 18px;
+    font-weight: 700;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+}
+
+th
+{
+    padding: 8px;
+}
+
+td
+{
+    padding: 8px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #333333;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-spacing: 0;
+}
+
+thead th
+{
+    border-width: 1px;
+    border-style: solid;
+    border-color: #333333;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+tfoot td
+{
+    border-width: 1px;
+    border-style: solid;
+    border-color: #333333;
+    border-bottom: 0px;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+@media screen and (min-width: 700px) 
+{
+    .cont .menu:hover .opcoes
+    {
+        width: 33%;
+    }
+
+    .corpo
+    {
+        height: 100%;
+    }
+
+    .formulario
+    {   
+        height: 189px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #979797;
+        border-radius: 4px;
+    }
+
+    .form1
+    {
+        justify-content: space-evenly;
+        height: 60%;
+        width: 95%;
+    }
+
+    .form1 form
+    {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .form1 form .nomemerc
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 45%;
+    }
+
+    .form1 form .trans
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 25%;
+    }
+
+    .form1 form .val
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 25%;
+    }
+
+    #addtrns
+    {
+        width: 200px;
+        align-self: flex-end;
+        margin-left: auto;
+    }
+
+    .historico
+    {
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (min-width: 1112px)
+{
+    header
+    {
+        height: 80px;
+    }
+
+    .cont
+    {
+        width: 1112px;
+    }
+
+    #titulo
+    {
+        margin-left: 10px;
+    }
+
+    .opcoes
+    {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: #FFFFFF;
+        width: 350px;
+        height: 40px;
+    }
+
+    .opcoes .sair
+    {
+        display: none;
+    }
+
+    .hamenu
+    {
+        display: none;
+    }
+
+    .corpo
+    {
+        width: 1112px;
+        display: flex;
+        flex-direction: row;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .formulario
+    {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 344px;
+        width: 35%;
+        margin-top: 30px;
+        margin-left: 0;
+        margin-right: auto;
+    }
+
+    .form1
+    {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        justify-content: space-around;
+        height: 250px;
+        width: 92%;
+        font-family: lato;
+        font-weight: 400;
+        font-size: 14px;
+    }
+
+    .form1 form
+    {
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 100%;
+        height: 100%;
+    }
+
+    .form1 form .nomemerc
+    {
+        width: 100%;
+    }
+
+    .form1 form .trans
+    {
+        width: 100%;
+    }
+
+    .form1 form .val
+    {
+        width: 100%;
+    }
+
+    #addtrns
+    {
+        width: 100%;
+        align-self: center;
+    }
+    
+    .historico
+    {
+        width: 65%;
+        margin-top: 50px;
+        margin-left: 15px;
+        font-family: lato;
+        font-size: 14px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .historico #extrato
+    {
+        font-size: 18px;
+        font-weight: 700;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 15px;
+    }
+}

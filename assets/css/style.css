@@ -44,6 +44,11 @@ header .cont
     font-style: normal;
 }
 
+#hamenu
+{
+    display: none;
+}
+
 #menu
 {
     display: flex;
@@ -54,6 +59,12 @@ header .cont
     background-color: #FFFFFF;
     width: 350px;
     height: 40px;
+}
+
+#menu a
+{
+    text-decoration: none;
+    color: #333333;
 }
 
 .corpo
@@ -221,9 +232,22 @@ tfoot td
         margin-left: 20px;
     }
 
-    .cont #menu
+    #menu
     {
+        display: none;
+    }
+
+    #hamenu
+    {
+        display: block;
         margin-right: 20px;
+        text-decoration: none;
+        color: #333333;
+    }
+
+    .cont #hamenu a:hover .cont #menu
+    {
+        display: flex;
     }
 
     .corpo
