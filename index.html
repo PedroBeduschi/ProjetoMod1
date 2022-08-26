@@ -35,8 +35,8 @@
                     <div class="novatrns">
                         Nova Transação
                     </div>
-                    <div class="form1">
-                        <form>
+                    <form class="form1">
+                        <div class="formcorpo">
                             <div class="trans">
                                 <label for="transacao">Tipo de transação</label>
                                 <select class="caixa" placeholder="Compra" id="transacao" name="transacao">
@@ -52,14 +52,15 @@
                                 <label for="valor">Valor</label>
                                 <input class="caixa" placeholder="R$ 0.00" type="number" id="valor" name="valor"/>
                             </div>
-                        </form>
+                            
+                        </div>
                         <input type="submit" id="addtrns" value="Adicionar transação"/>
-                    </div>
+                    </form>
                     
                 </div>
                 <div class="historico">
                     <table class="tabela" style="width: 100%;" cellspacing="0">
-                        <div id="extrato">Histórico de transações</div>
+                        <div id="extrato">Extrato de transações</div>
                         <thead>
                             <tr>
                                 <th style="width: 5%;"> </th>

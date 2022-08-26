@@ -26,6 +26,11 @@ header
     align-items: center;
 }
 
+.menu
+{
+    margin-right: 20px;
+}
+
 .cont
 {
     display: flex;
@@ -104,7 +109,7 @@ header
     font-size: 14px;
 }
 
-.form1 form
+.form1 .formcorpo
 {
     display: flex;
     flex-direction: column;
@@ -265,7 +270,7 @@ tfoot td
         width: 95%;
     }
 
-    .form1 form
+    .form1 .formcorpo
     {
         flex-direction: row;
         flex-wrap: nowrap;
@@ -273,7 +278,7 @@ tfoot td
         justify-content: space-between;
     }
 
-    .form1 form .nomemerc
+    .form1 .formcorpo .nomemerc
     {
         display: flex;
         flex-direction: column;
@@ -281,7 +286,7 @@ tfoot td
         width: 45%;
     }
 
-    .form1 form .trans
+    .form1 .formcorpo .trans
     {
         display: flex;
         flex-direction: column;
@@ -289,7 +294,7 @@ tfoot td
         width: 25%;
     }
 
-    .form1 form .val
+    .form1 .formcorpo .val
     {
         display: flex;
         flex-direction: column;
@@ -339,6 +344,7 @@ tfoot td
         background-color: #FFFFFF;
         width: 350px;
         height: 40px;
+        margin-right: 20px;
     }
 
     .opcoes .sair
@@ -356,8 +362,11 @@ tfoot td
         width: 1112px;
         display: flex;
         flex-direction: row;
+        justify-content: center;
         margin-left: auto;
         margin-right: auto;
+        padding-right: 22px;
+        padding-left: 22px;
     }
 
 
@@ -426,6 +435,7 @@ tfoot td
         width: 65%;
         margin-top: 50px;
         margin-left: 15px;
+        margin-right: 20px;
         font-family: lato;
         font-size: 14px;
         display: flex;
