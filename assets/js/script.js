@@ -18,7 +18,7 @@ function desenhaTabela()
         <tr>
             <td>${ (extrato[entrada].tipo == 'compra' ? '-' : '+')}</td>
             <td>${ extrato[entrada].descricao }</td>
-            <td style="text-align: right;">${ extrato[entrada].valor }</td>
+            <td style="text-align: right;"> R$ ${ extrato[entrada].valor }</td>
         </tr>`
     
         if (extrato[entrada].tipo == 'compra')
@@ -56,8 +56,6 @@ function testaFormulario(e)
         var extrato = [];
     }
 
-    console.log(extrato);
-
     extrato.push(
         {
             tipo: e.target.elements['transacao'].value,
@@ -65,8 +63,6 @@ function testaFormulario(e)
             valor: e.target.elements['valor'].value
         }
     )
-
-    console.log(extrato);
 
     localStorage.setItem('extrato', JSON.stringify(extrato));
 
@@ -82,6 +78,7 @@ function limparDados()
         localStorage.clear();
         extrato = [];
         desenhaTabela();
+        location.href="./index.html";
     }
        
 }
