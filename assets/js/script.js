@@ -61,23 +61,30 @@ function testaFormulario(e)
         var extrato = [];
     }
 
-    //corrige o valor mandado pela máscara
-    var valorCorrigido = e.target.elements['valor'].value;
-    valorCorrigido = (valorCorrigido).replace(/[^0-9]+/g, '.');
-    console.log(valorCorrigido);
+    if (document.getElementById('valor').value == '' || document.getElementById('nomemercadoria').value == '')
+    {
+        e.preventDefault();
+        alert('Preencha todos os campos antes de enviar.');
+    }
+    else
+    {
+        //corrige o valor mandado pela máscara
+        var valorCorrigido = e.target.elements['valor'].value;
+        valorCorrigido = (valorCorrigido).replace(/[^0-9]+/g, '.');
+        console.log(valorCorrigido);
 
-    extrato.push(
-        {
-            tipo: e.target.elements['transacao'].value,
-            descricao: e.target.elements['nomemercadoria'].value,
-            valor: valorCorrigido
-        }
-    )
+        extrato.push(
+            {
+                tipo: e.target.elements['transacao'].value,
+                descricao: e.target.elements['nomemercadoria'].value,
+                valor: valorCorrigido
+            }
+        )
 
-    localStorage.setItem('extrato', JSON.stringify(extrato));
+        localStorage.setItem('extrato', JSON.stringify(extrato));
 
-    desenhaTabela();
-
+        desenhaTabela();
+    }
 }
 
 //Excluir os dados da tabela com mensagem de confirmação
