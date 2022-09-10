@@ -1,3 +1,4 @@
+//Pega os dados do local storage e faz um array de objetos
 var extrato0 = localStorage.getItem('extrato')
 if (extrato0 != null)
 {
@@ -8,6 +9,7 @@ else
     var extrato = [];
 }
 
+//Função que desenha a tabela e calcula o resultado final
 function desenhaTabela()
 { 
     let total = 0;
@@ -20,7 +22,8 @@ function desenhaTabela()
             <td>${ extrato[entrada].descricao }</td>
             <td style="text-align: right;"> R$ ${ extrato[entrada].valor }</td>
         </tr>`
-    
+        
+        //Definição se o valor é positivo ou negativo
         if (extrato[entrada].tipo == 'compra')
         {
             total -= JSON.parse(extrato[entrada].valor);
@@ -32,6 +35,7 @@ function desenhaTabela()
         
     }
 
+    //Cálculo do resultado
     if (total >= 0)
     {
         document.getElementById('total').innerHTML = 'R$ '+total+ '<br><div id="resultadoFinal" style="font-size: 10px; font-weight: normal;">[LUCRO]</div>';
@@ -44,6 +48,7 @@ function desenhaTabela()
     console.log(total);
 }
 
+//Testando o formulário e mandando dados inseridos
 function testaFormulario(e)
 {
     var extrato0 = localStorage.getItem('extrato')
@@ -56,11 +61,16 @@ function testaFormulario(e)
         var extrato = [];
     }
 
+    //corrige o valor mandado pela máscara
+    var valorCorrigido = e.target.elements['valor'].value;
+    valorCorrigido = (valorCorrigido).replace(/[^0-9]+/g, '.');
+    console.log(valorCorrigido);
+
     extrato.push(
         {
             tipo: e.target.elements['transacao'].value,
             descricao: e.target.elements['nomemercadoria'].value,
-            valor: e.target.elements['valor'].value
+            valor: valorCorrigido
         }
     )
 
@@ -70,6 +80,7 @@ function testaFormulario(e)
 
 }
 
+//Excluir os dados da tabela com mensagem de confirmação
 function limparDados()
 {
     let mensagem = 'Você está prestes a excluir os dados do extrato.\nTem certeza que deseja excluir?'
@@ -81,6 +92,18 @@ function limparDados()
         location.href="./index.html";
     }
        
+}
+
+//Aplica a máscara para o valor
+function mascara()
+{
+    var novoValor = document.getElementById('valor').value;
+    novoValor = (novoValor).replace(/[^0-9]+/g, '');
+    novoValor = (novoValor).replace(/([0-9][0-9])$/g, ',$1');
+
+    document.getElementById('valor').value = novoValor;
+
+    console.log(novoValor);
 }
 
 desenhaTabela();
