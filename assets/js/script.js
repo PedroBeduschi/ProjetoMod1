@@ -38,11 +38,11 @@ function desenhaTabela()
     //Cálculo do resultado
     if (total >= 0)
     {
-        document.getElementById('total').innerHTML = 'R$ '+total+ '<br><div id="resultadoFinal" style="font-size: 10px; font-weight: normal;">[LUCRO]</div>';
+        document.getElementById('total').innerHTML = 'R$ '+total.toFixed(2)+ '<br><div id="resultadoFinal" style="font-size: 10px; font-weight: normal;">[LUCRO]</div>';
     }
     else
     {
-        document.getElementById('total').innerHTML = 'R$ '+total+ '<br><div id="resultadoFinal" style="font-size: 10px; font-weight: normal;">[DÉFICIT]</div>';
+        document.getElementById('total').innerHTML = 'R$ '+total.toFixed(2)+ '<br><div id="resultadoFinal" style="font-size: 10px; font-weight: normal;">[DÉFICIT]</div>';
     }
 
     console.log(total);
