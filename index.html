@@ -18,7 +18,7 @@
                     <div class="menu">
                         <a class="hamenu" href="javascript:void(0);">☰</a>
                         <div class="opcoes">
-                            <a class="sair" href="javascript:void(0);" style="text-align: left;">X</a>
+                            <a class="sair" onclick="fecharMenu()" href="javascript:void(0);" style="text-align: left; margin-right: auto;">X</a>
                             <a href="javascript:void(0);">
                                 Controle financeiro
                             </a>
@@ -50,7 +50,7 @@
                             </div>
                             <div  class="val">
                                 <label for="valor">Valor</label>
-                                <input class="caixa" placeholder="R$ 0.00" type="text" id="valor" name="valor" onkeyup="mascara()"/>
+                                <input class="caixa" placeholder="R$ 0.00" type="text" id="valor" name="valor" onkeydown="mascara()" onkeyup="mascara()"/>
                             </div>
                             
                         </div>

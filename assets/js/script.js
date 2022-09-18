@@ -28,11 +28,13 @@ function desenhaTabela()
     {
         for (entrada in extrato)
         {
+            var valorMercadoria = JSON.parse(extrato[entrada].valor);
+
             document.querySelector('table.tabela tbody').innerHTML += `
             <tr>
                 <td>${ (extrato[entrada].tipo == 'compra' ? '-' : '+')}</td>
                 <td>${ extrato[entrada].descricao }</td>
-                <td style="text-align: right;"> R$ ${ extrato[entrada].valor }</td>
+                <td style="text-align: right;"> R$ ${ valorMercadoria.toLocaleString('pt-BR') }</td>
             </tr>`
             
             //Definição se o valor é positivo ou negativo
@@ -51,32 +53,23 @@ function desenhaTabela()
     //Cálculo do resultado
     if (total >= 0)
     {
-        document.getElementById('total').innerHTML = 'R$ '+total.toFixed(2)+ '<br><div id="resultadoFinal" style="font-size: 10px; font-weight: normal;">[LUCRO]</div>';
+        document.getElementById('total').innerHTML = 'R$ '+total.toLocaleString('pt-BR')+ '<br><div id="resultadoFinal" style="font-size: 10px; font-weight: normal;">[LUCRO]</div>';
     }
     else
     {
-        document.getElementById('total').innerHTML = 'R$ '+total.toFixed(2)+ '<br><div id="resultadoFinal" style="font-size: 10px; font-weight: normal;">[DÉFICIT]</div>';
+        document.getElementById('total').innerHTML = 'R$ '+total.toLocaleString('pt-BR')+ '<br><div id="resultadoFinal" style="font-size: 10px; font-weight: normal;">[DÉFICIT]</div>';
     }
 
-    console.log(total);
+    console.log(total.toLocaleString('pt-BR'));
 }
 
 //Testando o formulário e mandando dados inseridos
 function testaFormulario(e)
 {
-    var extrato0 = localStorage.getItem('extrato')
-    if (extrato0 != null)
-    {
-        var extrato = JSON.parse(extrato0);
-    }
-    else
-    {
-        var extrato = [];
-    }
+    e.preventDefault();
 
     if (document.getElementById('valor').value == '' || document.getElementById('nomemercadoria').value == '')
     {
-        e.preventDefault();
         alert('Preencha todos os campos antes de enviar.');
     }
     else
@@ -96,6 +89,8 @@ function testaFormulario(e)
 
         localStorage.setItem('extrato', JSON.stringify(extrato));
 
+        document.querySelector('table.tabela tbody').innerHTML = '';
+
         desenhaTabela();
     }
 }
@@ -109,7 +104,6 @@ function limparDados()
         localStorage.clear();
         extrato = [];
         desenhaTabela();
-        location.href="./index.html";
     }
        
 }
@@ -124,6 +118,11 @@ function mascara()
     document.getElementById('valor').value = novoValor;
 
     console.log(novoValor);
+}
+
+function fecharMenu()
+{
+    document.querySelector('.menu .opcoes').style.display = 'none';
 }
 
 desenhaTabela();
