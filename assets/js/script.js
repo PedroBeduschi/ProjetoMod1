@@ -14,27 +14,40 @@ function desenhaTabela()
 { 
     let total = 0;
 
-    for (entrada in extrato)
-    {
-        document.querySelector('table.tabela tbody').innerHTML += `
-        <tr>
-            <td>${ (extrato[entrada].tipo == 'compra' ? '-' : '+')}</td>
-            <td>${ extrato[entrada].descricao }</td>
-            <td style="text-align: right;"> R$ ${ extrato[entrada].valor }</td>
-        </tr>`
-        
-        //Definição se o valor é positivo ou negativo
-        if (extrato[entrada].tipo == 'compra')
+    if (extrato0 == null)
         {
-            total -= JSON.parse(extrato[entrada].valor);
+            document.querySelector('table.tabela tbody').innerHTML = `
+            <tr>
+                <td>&nbsp;</td>
+                <td>Nenhuma mercadoria cadastrada.</td>
+                <td style="text-align: right;">&nbsp;</td>
+            </tr>`
         }
-        else
-        {
-            total += JSON.parse(extrato[entrada].valor);
-        }
-        
-    }
 
+    else
+    {
+        for (entrada in extrato)
+        {
+            document.querySelector('table.tabela tbody').innerHTML += `
+            <tr>
+                <td>${ (extrato[entrada].tipo == 'compra' ? '-' : '+')}</td>
+                <td>${ extrato[entrada].descricao }</td>
+                <td style="text-align: right;"> R$ ${ extrato[entrada].valor }</td>
+            </tr>`
+            
+            //Definição se o valor é positivo ou negativo
+            if (extrato[entrada].tipo == 'compra')
+            {
+                total -= JSON.parse(extrato[entrada].valor);
+            }
+            else
+            {
+                total += JSON.parse(extrato[entrada].valor);
+            }
+        }
+    }
+    
+    
     //Cálculo do resultado
     if (total >= 0)
     {
